@@ -55,7 +55,7 @@
             <f:textbox field="sourcePattern" default="**/src/main/java"/>
           </td>
           <td>
-            <f:textbox field="sourceInclusionPattern" default="**/*.java"/>
+            <f:textbox field="sourceInclusionPattern" default="**/*.java,**/*.groovy,**/*.kt,**/*.kts"/>
           </td>
           <td>
             <f:textbox field="sourceExclusionPattern" default=""/>
@@ -71,6 +71,10 @@
 
 	<f:entry field="changeBuildStatus">
 		<f:checkbox checked="${instance.selected}" title="Change build status according the thresholds"/>
+	</f:entry>
+
+	<f:entry field="runAlways">
+		<f:checkbox checked="${instance.selected}" title="Always run coverage collection, even if build is FAILED or ABORTED"/>
 	</f:entry>
     <f:entry>
 	  <table width="78%">
